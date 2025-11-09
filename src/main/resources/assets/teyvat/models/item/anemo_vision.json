@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "teyvat:item/vision_casing",
+    "layer1": "teyvat:item/anemo"
+  }
+}
