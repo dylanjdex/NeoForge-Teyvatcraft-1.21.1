@@ -1,6 +1,9 @@
 package com.dylanjd.teyvat;
 
 import com.dylanjd.teyvat.item.ModItems;
+import com.dylanjd.teyvat.screen.ModMenuTypes;
+import com.dylanjd.teyvat.screen.custom.VisionScreen;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -35,6 +38,8 @@ public class Teyvat {
 
         ModItems.register(modEventBus);
 
+        ModMenuTypes.register(modEventBus);
+
         modEventBus.addListener(this::addCreative);
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
@@ -55,4 +60,9 @@ public class Teyvat {
         // Do something when the server starts
         LOGGER.info("HELLO from server starting");
     }
+
+//    @SubscribeEvent
+//    public static void registerScreens(RegisterMenuScreensEvent event) {
+//        // event.register(ModMenuTypes.VISION_MENU.get(), VisionScreen::new);
+//    }
 }
